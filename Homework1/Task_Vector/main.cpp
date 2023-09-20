@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-	TVector_3d a(1, 1, 0);
-	TVector_3d b(0, 1, 0);
+	TVector_3d a;
+	TVector_3d b;
 	TVector_3d c;
 
 	cout << "a = ";
@@ -14,8 +14,8 @@ int main() {
 	cin >> b;
 	cout << endl;
 
-	cout << a << endl;
-	cout << b << endl;
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
 
 	// poerator+
 	c = a + b;

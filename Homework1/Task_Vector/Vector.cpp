@@ -15,6 +15,15 @@ TVector_3d::TVector_3d(const TVector_3d& vect) {
 	z = vect.z;
 }
 
+istream& operator>>(istream& in, TVector_3d& vect) {
+	in >> vect.x >> vect.y >> vect.z;
+	return in;
+}
+ostream& operator<<(ostream& out, const TVector_3d& vect) {
+	out << "(" << vect.x << ", " << vect.y << ", " << vect.z << ") ";
+	return out;
+}
+
 const TVector_3d& TVector_3d::operator=(const TVector_3d& vect) {
 	x = vect.x;
 	y = vect.y;

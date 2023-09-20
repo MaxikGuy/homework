@@ -14,18 +14,12 @@ public:
 	TVector_3d(const float _x = 0, const float _y = 0, const float _z = 0);
 	TVector_3d(const TVector_3d& vect);
 
-	friend istream& operator>>(istream& in, TVector_3d& vect) {
-		in >> vect.x >> vect.y >> vect.z;
-		return in;
-	}
-	friend ostream& operator<<(ostream& out, const TVector_3d& vect) {
-		out << "(" << vect.x << ", " << vect.y << ", " << vect.z << ") ";
-		return out;
-	}
+	friend istream& operator>>(istream& in, TVector_3d& vect);
+	friend ostream& operator<<(ostream& out, const TVector_3d& vect);
 
-	float GetX() { return x; }
-	float GetY() { return y; }
-	float GetZ() { return z; }
+	float GetX() const { return x; }
+	float GetY() const { return y; }
+	float GetZ() const { return z; }
 
 	const TVector_3d& operator=(const TVector_3d& vect);
 
