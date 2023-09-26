@@ -21,7 +21,7 @@ public:
 	TPerson(const TPerson& p);
 
 	friend istream& operator>>(istream& in, TPerson& p) {
-		in >> p.surname >> p.name >> p.patronymic >> p.phone_number >> p.date_of_birth;
+		in >> p.surname >> p.name >> p.patronymic >> p.date_of_birth >> p.phone_number;
 		return in;
 	}
 	friend ostream& operator<<(ostream& out, const TPerson& p) {

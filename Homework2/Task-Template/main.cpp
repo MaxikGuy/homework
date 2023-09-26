@@ -8,7 +8,7 @@ int main() {
 	Vector<int> b(3);
 	//Vector<int> c;
 	//Vector<int> d(3);
-	
+
 	try {
 		cout << "a = ";
 		cin >> a;
@@ -17,10 +17,9 @@ int main() {
 		cout << "a = " << a << endl;
 		cout << "b = " << b << "\n" << endl;
 
-
 		cout << "operator+: " << a + b << endl;
 		//cout << "operator-: " << a - b << endl;
-		cout << "operator*: " << a*b << endl;
+		cout << "operator*: " << a * b << endl;
 		cout << "operator==: " << (a == b) << endl;
 		cout << "operator!=: " << (a != b) << endl;
 		cout << "a.mod(): " << a.mod() << endl;

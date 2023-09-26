@@ -46,6 +46,9 @@ Vector<T>::Vector(int _size) {
 	if (_size <= 0) throw "size error";
 	size = _size;
 	elem = new T[size];
+	for (int i = 0; i < size; i++) {
+		elem[i] = 0;
+	}
 }
 /*
 template <typename T>
@@ -57,13 +60,13 @@ Vector<T>::Vector(const Vector<T>& v) {
 	}
 	for (int i = 0; i < size; i++)
 		elem[i] = v.elem[i];
-}*/
+}
 template <typename T>
 Vector<T>::~Vector() {
 	if (size > 0)
 		delete[] elem;
 }
-
+*/
 template <typename T>
 const Vector<T>& Vector<T>::operator=(const Vector<T>& v) {
 	if (size != v.size) {
@@ -79,10 +82,11 @@ const Vector<T>& Vector<T>::operator=(const Vector<T>& v) {
 template <typename T>
 Vector<T> Vector<T>::operator+(const Vector<T>& v) {
 	if (size != v.size) throw "size error";
-	Vector<T> tmp(size);
+
+	Vector<T> res(size);
 	for (int i = 0; i < size; i++)
-		tmp.elem[i] = elem[i] + v.elem[i];
-	return tmp;
+		res.elem[i] = elem[i] + v.elem[i];
+	return res;
 }
 template <typename T>
 Vector<T> Vector<T>::operator-(const Vector<T>& v) {
@@ -122,5 +126,6 @@ double Vector<T>::mod() {
 		ans += elem[i] * elem[i];
 	return sqrt((double)ans);
 }
+
 
 #endif // !VECTOR_H

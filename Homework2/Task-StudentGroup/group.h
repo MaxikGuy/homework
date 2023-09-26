@@ -30,11 +30,16 @@ public:
 	void FindByMonth(int month);
 	void FindByYear(int year);
 
+	void FindByPhone(string phone);
+
 	void AddStudent();
 	void AddStudent(const TPerson& p);
 
 	void DeleteStudent(int index);
 	void DeleteStudent(const TPerson& p);
+
+
+	int GetCount() const { return count; }
 
 	TPerson& operator[](int index);
 

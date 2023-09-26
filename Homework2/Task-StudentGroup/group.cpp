@@ -136,6 +136,17 @@ void TGroup::FindByYear(int year) {
 		cout << "—тудентов с таким годом рождени€ не найдено." << endl;
 }
 
+void TGroup::FindByPhone(string phone) {
+	bool flag = true;
+	for (int i = 0; i < count; i++)
+		if (students[i].GetPhone() == phone) {
+			cout << i << ". " << students[i] << endl;
+			flag = false;
+		}
+	if (flag)
+		cout << "—тудентов с таким днем рождени€ не найдено." << endl;
+}
+
 void TGroup::AddStudent() {
 	TPerson tmp;
 	tmp.Set();
