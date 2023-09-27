@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "person.h"
+#include "MyArr.h"
 
 using namespace std;
 
@@ -19,18 +20,18 @@ public:
 
 	void ScanFile(const string& filename = "data.txt");
 
-	void FindByName(string name);
-	void FindBySurname(string surname);
-	void FindByPatronymic(string patronymic);
+	TArr FindByName(string name);
+	TArr FindBySurname(string surname);
+	TArr FindByPatronymic(string patronymic);
 
 	int FindStudent(const TPerson& p);
 
-	void FindByDate(string date);
-	void FindByDay(int day);
-	void FindByMonth(int month);
-	void FindByYear(int year);
+	TArr FindByDate(string date);
+	TArr FindByDay(int day);
+	TArr FindByMonth(int month);
+	TArr FindByYear(int year);
 
-	void FindByPhone(string phone);
+	int FindByPhone(string phone);
 
 	void AddStudent();
 	void AddStudent(const TPerson& p);

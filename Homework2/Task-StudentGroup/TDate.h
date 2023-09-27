@@ -21,9 +21,6 @@ struct TDate {
 		SetDateFromString(dateStr);
 	}
 
-	void Print() {
-		cout << setfill('0') << setw(2) << day << '.' << setfill('0') << setw(2) << month << '.' << year;
-	}
 	string StringDate() const {
 		string ans = intToString(day, 2, '0') + intToString(month, 2, '0') + intToString(year, 2, '0');
 		return ans;

@@ -13,7 +13,7 @@ private:
 	T* elem;
 public:
 	Vector(int _size = 10);
-	//Vector(const Vector<T>& v);
+	Vector(const Vector<T>& v);
 	~Vector();
 
 	const Vector<T>& operator=(const Vector<T>& v);
@@ -22,10 +22,10 @@ public:
 	Vector<T> operator-(const Vector<T>& v);
 	double operator*(const Vector<T>& v);
 
-	bool operator==(const Vector<T>& v);
-	bool operator!=(const Vector<T>& v);
+	bool operator==(const Vector<T>& v) const;
+	bool operator!=(const Vector<T>& v) const;
 
-	double mod();
+	double mod() const;
 
 	friend ostream& operator<<(ostream& out, const Vector<T>& v) {
 		out << "(" << v.elem[0] << ", ";
@@ -50,7 +50,7 @@ Vector<T>::Vector(int _size) {
 		elem[i] = 0;
 	}
 }
-/*
+
 template <typename T>
 Vector<T>::Vector(const Vector<T>& v) {
 	if (size != v.size) {
@@ -66,7 +66,7 @@ Vector<T>::~Vector() {
 	if (size > 0)
 		delete[] elem;
 }
-*/
+
 template <typename T>
 const Vector<T>& Vector<T>::operator=(const Vector<T>& v) {
 	if (size != v.size) {
@@ -106,7 +106,7 @@ double Vector<T>::operator*(const Vector<T>& v) {
 }
 
 template <typename T>
-bool Vector<T>::operator==(const Vector<T>& v) {
+bool Vector<T>::operator==(const Vector<T>& v) const {
 	if (this == &v) return true;
 	if (size != v.size) return false;
 	for (int i = 0; i < size; i++)
@@ -115,16 +115,16 @@ bool Vector<T>::operator==(const Vector<T>& v) {
 	return true;
 }
 template <typename T>
-bool Vector<T>::operator!=(const Vector<T>& v) {
+bool Vector<T>::operator!=(const Vector<T>& v) const {
 	return !((*this) == v);
 }
 
 template <typename T>
-double Vector<T>::mod() {
+double Vector<T>::mod() const {
 	T ans = 0;
 	for (int i = 0; i < size; i++)
 		ans += elem[i] * elem[i];
-	return sqrt((double)ans);
+	return sqrt(ans);
 }
 
 

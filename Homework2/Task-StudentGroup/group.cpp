@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include "group.h"
+#include "MyArr.h"
 
 using namespace std;
 
@@ -54,35 +55,72 @@ void TGroup::ScanFile(const string& filename) {
 	}
 }
 
-void TGroup::FindByName(string name) {
-	bool flag = true;
+//////////////////////////////////////
+TArr TGroup::FindByName(string name) {
+	int ind_count = 0;
+
 	for (int i = 0; i < count; i++)
-		if (students[i].GetName() == name) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+		if (students[i].name == name) {
+			ind_count++;
 		}
-	if (flag)
-		cout << "Студентов с таким именем не найдено." << endl;
+
+	if (!ind_count) {
+		TArr res;
+		return res;
+	}
+
+	TArr res(ind_count);
+	int ind = 0;
+	for (int i = 0; i < count; i++) {
+		if (students[i].name == name)
+			res[ind++] = i;
+	}
+
+	return res;
 }
-void TGroup::FindBySurname(string surname) {
-	bool flag = true;
+TArr TGroup::FindBySurname(string surname) { // students[i].surname == surname
+	int ind_count = 0;
+
 	for (int i = 0; i < count; i++)
-		if (students[i].GetSurname() == surname) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+		if (students[i].surname == surname) {
+			ind_count++;
 		}
-	if (flag)
-		cout << "Студентов с такой фамилией не найдено." << endl;
+
+	if (!ind_count) {
+		TArr res;
+		return res;
+	}
+
+	TArr res(ind_count);
+	int ind = 0;
+	for (int i = 0; i < count; i++) {
+		if (students[i].surname == surname)
+			res[ind++] = i;
+	}
+
+	return res;
 }
-void TGroup::FindByPatronymic(string patronymic) {
-	bool flag = true;
+TArr TGroup::FindByPatronymic(string patronymic) { // students[i].patronymic == patronymic
+	int ind_count = 0;
+
 	for (int i = 0; i < count; i++)
-		if (students[i].GetPatronymic() == patronymic) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+		if (students[i].patronymic == patronymic) {
+			ind_count++;
 		}
-	if (flag)
-		cout << "Студентов с таким отчеством не найдено." << endl;
+
+	if (!ind_count) {
+		TArr res;
+		return res;
+	}
+
+	TArr res(ind_count);
+	int ind = 0;
+	for (int i = 0; i < count; i++) {
+		if (students[i].patronymic == patronymic)
+			res[ind++] = i;
+	}
+
+	return res;
 }
 
 int TGroup::FindStudent(const TPerson& p) {
@@ -95,56 +133,103 @@ int TGroup::FindStudent(const TPerson& p) {
 	return ind;
 }
 
-void TGroup::FindByDate(string date) {
-	bool flag = true;
+TArr TGroup::FindByDate(string date) { // students[i].GetDate() == date
+	int ind_count = 0;
+
 	for (int i = 0; i < count; i++)
 		if (students[i].GetDate() == date) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+			ind_count++;
 		}
-	if (flag)
-		cout << "Студентов с такой датой рождения не найдено." << endl;
+
+	if (!ind_count) {
+		TArr res;
+		return res;
+	}
+
+	TArr res(ind_count);
+	int ind = 0;
+	for (int i = 0; i < count; i++) {
+		if (students[i].GetDate() == date)
+			res[ind++] = i;
+	}
+
+	return res;
 }
-void TGroup::FindByDay(int day) {
-	bool flag = true;
+TArr TGroup::FindByDay(int day) { // students[i].GetDay() == day
+	int ind_count = 0;
+
 	for (int i = 0; i < count; i++)
 		if (students[i].GetDay() == day) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+			ind_count++;
 		}
-	if (flag)
-		cout << "Студентов с таким днем рождения не найдено." << endl;
+
+	if (!ind_count) {
+		TArr res;
+		return res;
+	}
+
+	TArr res(ind_count);
+	int ind = 0;
+	for (int i = 0; i < count; i++) {
+		if (students[i].GetDay() == day)
+			res[ind++] = i;
+	}
+
+	return res;
 }
-void TGroup::FindByMonth(int month) {
-	bool flag = true;
+TArr TGroup::FindByMonth(int month) { // students[i].GetMonth() == month
+	int ind_count = 0;
+
 	for (int i = 0; i < count; i++)
 		if (students[i].GetMonth() == month) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+			ind_count++;
 		}
-	if (flag)
-		cout << "Студентов с таким месяцем рождения не найдено." << endl;
+
+	if (!ind_count) {
+		TArr res;
+		return res;
+	}
+
+	TArr res(ind_count);
+	int ind = 0;
+	for (int i = 0; i < count; i++) {
+		if (students[i].GetMonth() == month)
+			res[ind++] = i;
+	}
+
+	return res;
 }
-void TGroup::FindByYear(int year) {
-	bool flag = true;
+TArr TGroup::FindByYear(int year) { // students[i].GetYear() == year
+	int ind_count = 0;
+
 	for (int i = 0; i < count; i++)
 		if (students[i].GetYear() == year) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+			ind_count++;
 		}
-	if (flag)
-		cout << "Студентов с таким годом рождения не найдено." << endl;
+
+	if (!ind_count) {
+		TArr res;
+		return res;
+	}
+
+	TArr res(ind_count);
+	int ind = 0;
+	for (int i = 0; i < count; i++) {
+		if (students[i].GetYear() == year)
+			res[ind++] = i;
+	}
+
+	return res;
 }
 
-void TGroup::FindByPhone(string phone) {
-	bool flag = true;
+int TGroup::FindByPhone(string phone) {
+	int res = -1;
 	for (int i = 0; i < count; i++)
-		if (students[i].GetPhone() == phone) {
-			cout << i << ". " << students[i] << endl;
-			flag = false;
+		if (students[i].phone_number == phone) {
+			res = i;
+			break;
 		}
-	if (flag)
-		cout << "Студентов с таким днем рождения не найдено." << endl;
+	return res;
 }
 
 void TGroup::AddStudent() {
@@ -171,7 +256,7 @@ void TGroup::DeleteStudent(const TPerson& p) {
 }
 
 TPerson& TGroup::operator[](int index) {
-	if (index < count) throw "error: index out of range";
+	if (index >= count) throw "error: index out of range";
 	return students[index];
 }
 

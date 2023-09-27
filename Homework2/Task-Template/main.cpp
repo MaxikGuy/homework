@@ -18,13 +18,13 @@ int main() {
 		cout << "b = " << b << "\n" << endl;
 
 		cout << "operator+: " << a + b << endl;
-		//cout << "operator-: " << a - b << endl;
+		cout << "operator-: " << a - b << endl;
 		cout << "operator*: " << a * b << endl;
 		cout << "operator==: " << (a == b) << endl;
 		cout << "operator!=: " << (a != b) << endl;
 		cout << "a.mod(): " << a.mod() << endl;
 	}
-	catch (string exp) {
+	catch (const string& exp) {
 		cout << exp << endl;
 	}
 

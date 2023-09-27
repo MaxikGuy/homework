@@ -37,6 +37,7 @@ void TPerson::Set() {
 	cout << "date_of_birth = ";
 	cin >> date_of_birth;
 }
+/*
 void TPerson::Set(string _surname, string _name, string _patronymic, string _date_of_birthStr, string _phone_number) {
 	name = _name;
 	surname = _surname;
@@ -70,13 +71,14 @@ string TPerson::GetSurname() {
 string TPerson::GetPatronymic() {
 	return patronymic;
 }
+
+string TPerson::GetPhone() {
+	return phone_number;
+}*/
+
 string TPerson::GetDate() {
 	return date_of_birth.StringDate();
 }
-string TPerson::GetPhone() {
-	return phone_number;
-}
-
 int TPerson::GetDay() {
 	return date_of_birth.day;
 }

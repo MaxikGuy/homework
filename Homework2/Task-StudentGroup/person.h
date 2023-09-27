@@ -8,14 +8,13 @@
 
 using namespace std;
 
-class TPerson {
-private:
+struct TPerson {
 	string name;		// Имя
 	string surname;		// Фамилия
 	string patronymic;	// Отчество
 	TDate date_of_birth;
 	string phone_number;
-public:
+
 	TPerson();
 	TPerson(string _surname, string _name, string _patronymic, string _date_of_birthStr, string _phone_number);
 	TPerson(const TPerson& p);
@@ -29,7 +28,9 @@ public:
 		return out;
 	}
 
+	
 	void Set();
+	/*
 	void Set(string _surname, string _name, string _patronymic, string _date_of_birthStr, string _phone_number);
 	void SetName(string _name);
 	void SetSurname(string _surname);
@@ -40,9 +41,11 @@ public:
 	string GetName();
 	string GetSurname();
 	string GetPatronymic();
-	string GetDate();
+	
 	string GetPhone();
+	*/
 
+	string GetDate();
 	int GetDay();
 	int GetMonth();
 	int GetYear();

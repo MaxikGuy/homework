@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="group.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyArr.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="group.h" />
+    <ClInclude Include="MyArr.h" />
     <ClInclude Include="person.h" />
     <ClInclude Include="TDate.h" />
     <ClInclude Include="utility.h" />
