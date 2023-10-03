@@ -37,44 +37,6 @@ void TPerson::Set() {
 	cout << "date_of_birth = ";
 	cin >> date_of_birth;
 }
-/*
-void TPerson::Set(string _surname, string _name, string _patronymic, string _date_of_birthStr, string _phone_number) {
-	name = _name;
-	surname = _surname;
-	patronymic = _patronymic;
-	date_of_birth.SetDateFromString(_date_of_birthStr);
-	phone_number = _phone_number;
-}
-void TPerson::SetName(string _name) {
-	name = _name;
-}
-void TPerson::SetSurname(string _surname){
-	surname = _surname;
-}
-void TPerson::SetPatronymic(string _patronymic) {
-	patronymic = _patronymic;
-}
-void TPerson::SetDate(string _dateStr) {
-	date_of_birth.SetDateFromString(_dateStr);
-}
-void TPerson::SetPhone(string _phone_number) {
-	phone_number = _phone_number;
-}
-
-
-string TPerson::GetName() {
-	return name;
-}
-string TPerson::GetSurname() {
-	return surname;
-}
-string TPerson::GetPatronymic() {
-	return patronymic;
-}
-
-string TPerson::GetPhone() {
-	return phone_number;
-}*/
 
 string TPerson::GetDate() {
 	return date_of_birth.StringDate();

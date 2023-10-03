@@ -27,23 +27,8 @@ struct TPerson {
 		out << p.surname << ' ' << p.name << ' ' << p.patronymic << ", " << p.date_of_birth << ", " << p.phone_number << ' ';
 		return out;
 	}
-
 	
 	void Set();
-	/*
-	void Set(string _surname, string _name, string _patronymic, string _date_of_birthStr, string _phone_number);
-	void SetName(string _name);
-	void SetSurname(string _surname);
-	void SetPatronymic(string _patronymic);
-	void SetDate(string _dateStr);
-	void SetPhone(string _phone);
-
-	string GetName();
-	string GetSurname();
-	string GetPatronymic();
-	
-	string GetPhone();
-	*/
 
 	string GetDate();
 	int GetDay();
