@@ -30,10 +30,10 @@ struct TPerson {
 	
 	void Set();
 
-	string GetDate();
-	int GetDay();
-	int GetMonth();
-	int GetYear();
+	string GetDate() const;
+	int GetDay() const;
+	int GetMonth() const;
+	int GetYear() const;
 
 	bool operator==(const TPerson& p) const;
 	bool operator!=(const TPerson& p) const;

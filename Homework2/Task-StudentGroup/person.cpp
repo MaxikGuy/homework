@@ -38,16 +38,16 @@ void TPerson::Set() {
 	cin >> date_of_birth;
 }
 
-string TPerson::GetDate() {
+string TPerson::GetDate() const {
 	return date_of_birth.StringDate();
 }
-int TPerson::GetDay() {
+int TPerson::GetDay() const {
 	return date_of_birth.day;
 }
-int TPerson::GetMonth() {
+int TPerson::GetMonth() const {
 	return date_of_birth.month;
 }
-int TPerson::GetYear() {
+int TPerson::GetYear() const {
 	return date_of_birth.year;
 }
 
